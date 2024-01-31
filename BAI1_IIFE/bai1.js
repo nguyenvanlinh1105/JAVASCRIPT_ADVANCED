@@ -11,3 +11,17 @@ let i = 0
 })('Chào bạn')
 
 // Ko gọi lại myfunction vì nó private 
+
+;(function(){
+    let fullName ='Linh nguyen'
+    console.log(fullName);
+
+})();
+
+//các cách tạo ra một IIFE
+
++function(){
+    console.log("name");
+}()
+
+
