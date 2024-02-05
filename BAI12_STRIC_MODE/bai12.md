@@ -10,3 +10,12 @@
         function testfunc(){
             age = 18; tạo ra biến ở phạm vi globel 
         }
+- Báo lỗi khi gắn lại giá trị cho thuộc tính có writable : false
+- Báo lỗi khi hàm có tham số trùng tên 
+- Khai báo hàm trong code block thì hàm sẽ thuộc phạm vi code block 
+- Không thể đặt tên biến tên hàm bằng từ khóa "nhạy cảm của ngôn ngữ"
+
+# Công dụng 
+1. Tránh quên từ khoa khai báo biên s
+2. Tránh trùng tên biến dẫn tới lỗi logic 
+3. Sử dụng bộ nhớ hiệu quả vì tránh được tạo biến global 
