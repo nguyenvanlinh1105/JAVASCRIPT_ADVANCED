@@ -18,8 +18,10 @@ const app = (() => {
             this.render();
         },
         render() {
-            const html = cars.map(car => {
-                return `<li>Name car: ${car}</li>`;
+            const html = cars.map((car,index) => {
+                return `
+                 ${car} <span class="delete" data-index="${index}">&times</span><br>
+                `;
             }).join('');
             root.innerHTML = html;
         },
