@@ -20,10 +20,18 @@ const app = (() => {
         render() {
             const html = cars.map((car,index) => {
                 return `
-                 ${car} <span class="delete" data-index="${index}">&times</span><br>
+                 <li>${car} <span class="delete" data-index="${index}">&times</span></li><br>
                 `;
             }).join('');
             root.innerHTML = html;
+        },
+        handleDelete(e){
+            const deleteBtn=e.target.closest('.delete');
+            if(deleteBtn){
+                const index = deleteBtn.dataset.index;
+                this.delete(index)
+                this.render();
+            }
         },
         init() {
             // handle dom event
@@ -35,10 +43,13 @@ const app = (() => {
                     input.focus();
                 }
             };
-
+            root.onclick= this.handleDelete.bind(this)
             this.render();
         }
     };
 })();
 
 app.init();
+// Delegate pattern : bắt được sự kiện get vào element đươc thêm vào dom khi chương trình nó chạy 
+
+
