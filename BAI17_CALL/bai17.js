@@ -21,3 +21,15 @@ const me ={
 
 
 me.showFullName.call(this)// gọi là kĩ thuật mượn hàm 
+
+function animal(name, weight){
+    this.name = name;
+    this. weight = weight
+}
+// kế thừa thuộc tính của call()
+function chicken(name, weight, legs){
+    this.legs = legs;
+}
+
+const linhnguyen=new chicken("Linh Nguyen", 20,58)
+console.log(linhnguyen)
