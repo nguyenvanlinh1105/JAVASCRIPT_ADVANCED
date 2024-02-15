@@ -1,4 +1,29 @@
-import {createStore} from 'https://cdn.skypack.dev/redux';
+// import {createStore} from 'https://cdn.skypack.dev/redux';
+// MY REDUX
+
+function createStore(reducer){
+    let state = reducer(undefined,{});
+    const subcribers = []
+    return {
+        getState(){
+            return state
+        },
+        dispatch(action){
+            state=reducer(state,action)
+            subcribers.forEach(subcriber=>{
+                subcriber();
+            })
+        },
+        subscribe(subcriber){
+            subcribers.push(subcriber)
+        }
+    }
+}
+
+
+
+
+///////////////MY APP///////
 // Reducer 
 const initState = 0;
 function reducer(state=initState,action){
@@ -42,6 +67,7 @@ withdraw.onclick = function(){
 // listener 
 store.subscribe(()=>{
     console.log('State vừa  update xong !')
+    render()
 })
 
 function render (){
