@@ -1,5 +1,5 @@
-import html from './core.js'
 import { attach } from './store.js'
+import app from './component/app.js'
 // const cars =['BMW','Porsche','Mercedes']
 // console.log(cars)
 
@@ -13,4 +13,9 @@ import { attach } from './store.js'
 //     </ul>
 // `
 // console.log(output)
-attach(()=>'<h1>HelloWorld</h1>', document.getElementById('root'))
+
+
+
+
+
+attach(app, document.getElementById('root'))

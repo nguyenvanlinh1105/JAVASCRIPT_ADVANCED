@@ -22,10 +22,11 @@ export function createStore(reducer){
         },
         connect(selector=state=>state){// connect nhận một selector là một hàm và nhận một state và đối số trả về 1state
             return component=>(props,...args)=>
-                component(object.assign({}, props,selector(state),...args))
+                component(Object.assign({}, props,selector(state),...args))
+                // đẩy ngược state vào lại trong component => gọi là props 
         },
         dispatch(action,...args){
-            state=reducer(state, action,args)
+            state=reducer(state,action,args)
             render()
         }
 
